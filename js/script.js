@@ -8,6 +8,7 @@ if (categoryGrid && previousButton && nextButton) {
     cards.map((card) => {
       const clone = card.cloneNode(true);
       clone.setAttribute("aria-hidden", "true");
+      clone.setAttribute("inert", "");
       clone.classList.add("category-card--clone");
       return clone;
     });

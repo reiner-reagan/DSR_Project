@@ -96,6 +96,15 @@ img { display: block; }
   object-fit: cover;
 }
 
+.category-card__image-link {
+  display: block;
+}
+
+.category-card__image-link:focus-visible {
+  outline: 3px solid #165d9c;
+  outline-offset: -3px;
+}
+
 .category-card:nth-child(1) img { object-position: center 45%; }
 .category-card:nth-child(2) img { object-position: center 60%; }
 .category-card:nth-child(4) img { object-position: center 55%; }

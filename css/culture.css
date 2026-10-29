@@ -1,0 +1,228 @@
+.culture-hero {
+  position: relative;
+  display: grid;
+  height: 300px;
+  place-items: center;
+  overflow: hidden;
+  background: #d9d9d9;
+}
+
+.culture-hero__background {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+}
+
+.culture-hero__logo {
+  position: absolute;
+  top: 30px;
+  left: 26px;
+  z-index: 1;
+  display: grid;
+  width: 240px;
+  aspect-ratio: 1;
+  place-items: center;
+  background: #000;
+}
+
+.culture-hero__logo img {
+  width: 100%;
+  max-width: none;
+}
+
+.culture-hero h1 {
+  position: relative;
+  margin: 0;
+  color: #fff;
+  font-size: clamp(48px, 9.03vw, 130px);
+  font-weight: 700;
+  line-height: 1;
+  text-align: center;
+}
+
+.culture-hero__home {
+  position: absolute;
+  top: 30px;
+  right: 46px;
+  z-index: 1;
+  display: block;
+  width: 61px;
+  height: 57px;
+}
+
+.culture-projects {
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 103px 3.47% 60px;
+}
+
+.culture-project-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  column-gap: 25px;
+  row-gap: 103px;
+}
+
+.culture-project-card h2 {
+  display: grid;
+  height: 78px;
+  margin: 0;
+  place-items: center;
+  background: #000;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.culture-project-card__image {
+  position: relative;
+  height: 264px;
+  overflow: hidden;
+}
+
+.culture-project-card__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  object-fit: cover;
+}
+
+.culture-project-card--shed .culture-project-card__image img {
+  left: -13.56%;
+  width: 123.66%;
+  height: 100.1%;
+}
+
+.culture-project-card--broad .culture-project-card__image img {
+  left: -18.04%;
+  width: 139.87%;
+  height: 100.08%;
+}
+
+.culture-project-card--unm .culture-project-card__image img {
+  left: -17.46%;
+  width: 125.71%;
+}
+
+.culture-project-card--pina .culture-project-card__image img {
+  left: -26.98%;
+  width: 167.62%;
+}
+
+.culture-project-card--bampfa .culture-project-card__image img {
+  left: -20.29%;
+  width: 172.85%;
+}
+
+.culture-project-card--eyebeam .culture-project-card__image img {
+  left: -17.09%;
+  height: 144.33%;
+  width: 123.57%;
+}
+
+.culture-project-card--moma .culture-project-card__image img {
+  left: -19.63%;
+  width: 130.22%;
+  height: 100.01%;
+}
+
+.culture-project-card--sarofim .culture-project-card__image img {
+  left: -12.95%;
+  width: 131.87%;
+}
+
+.culture-projects__pagination {
+  margin: 100px 0 0;
+  font-size: 24px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.culture-hero__logo:focus-visible,
+.culture-hero__home:focus-visible {
+  outline: 3px solid #165d9c;
+  outline-offset: 4px;
+}
+
+@media (max-width: 900px) {
+  .culture-hero {
+    height: clamp(220px, 30vw, 300px);
+  }
+
+  .culture-hero__logo {
+    top: 20px;
+    left: 20px;
+    width: clamp(100px, 17vw, 180px);
+  }
+
+  .culture-hero__home {
+    top: 22px;
+    right: 24px;
+    width: 48px;
+    height: 45px;
+  }
+
+  .culture-projects {
+    padding: 60px 5% 48px;
+  }
+
+  .culture-project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px 20px;
+  }
+
+  .culture-project-card__image {
+    height: auto;
+    aspect-ratio: 316 / 264;
+  }
+
+  .culture-projects__pagination {
+    margin-top: 60px;
+  }
+}
+
+@media (max-width: 520px) {
+  .culture-hero {
+    height: 220px;
+  }
+
+  .culture-hero__logo {
+    top: 16px;
+    left: 16px;
+    width: 86px;
+  }
+
+  .culture-hero__home {
+    top: 18px;
+    right: 18px;
+    width: 38px;
+    height: 36px;
+  }
+
+  .culture-projects {
+    padding: 36px 5% 40px;
+  }
+
+  .culture-project-grid {
+    grid-template-columns: 1fr;
+    row-gap: 32px;
+  }
+
+  .culture-project-card h2 {
+    height: 60px;
+    font-size: 20px;
+  }
+
+  .culture-projects__pagination {
+    margin-top: 42px;
+    font-size: 20px;
+  }
+}
