@@ -1,0 +1,220 @@
+/* GLOBAL STYLESHEET */
+*, *::before, *::after { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  color: #000;
+  font-family: Roboto, Arial, sans-serif;
+}
+
+img { display: block; }
+
+.hero {
+  position: relative;
+  display: grid;
+  min-height: 520px;
+  height: min(65.49vw, 943px);
+  place-items: center;
+  overflow: hidden;
+}
+
+.hero__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.hero__mark {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  width: min(38.9vw, 560px);
+  aspect-ratio: 1;
+  place-items: center;
+  background: #000;
+}
+
+.hero__mark img {
+  width: 105.36%;
+  max-width: none;
+}
+
+.categories {
+  position: relative;
+  padding-bottom: 82px;
+  overflow: hidden;
+}
+
+.section-title {
+  display: grid;
+  min-height: 129px;
+  margin: 0;
+  place-items: center;
+  background: #d0d9e3;
+  font-size: clamp(32px, 3.82vw, 55px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.category-grid {
+  display: grid;
+  grid-auto-columns: calc((100% - 26px) / 3);
+  grid-auto-flow: column;
+  grid-template-columns: none;
+  gap: 13px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+}
+
+.category-grid::-webkit-scrollbar { display: none; }
+
+.category-card {
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+.category-card h2 {
+  display: grid;
+  min-height: 160px;
+  margin: 0;
+  place-items: center;
+  background: #000;
+  color: #fff;
+  font-size: clamp(25px, 3.48vw, 50px);
+  font-weight: 400;
+  line-height: 1.1;
+  text-align: center;
+}
+
+.category-card img {
+  width: 100%;
+  height: 363px;
+  object-fit: cover;
+}
+
+.category-card:nth-child(1) img { object-position: center 45%; }
+.category-card:nth-child(2) img { object-position: center 60%; }
+.category-card:nth-child(4) img { object-position: center 55%; }
+.category-card:nth-child(5) img { object-position: center 50%; }
+
+.carousel-control {
+  position: absolute;
+  z-index: 2;
+  top: 60%;
+  display: grid;
+  width: 112px;
+  height: 115px;
+  padding: 10px 8px;
+  border: 0;
+  background: rgb(255 255 255 / 73%);
+  cursor: pointer;
+}
+
+.carousel-control img {
+  width: 95px;
+  height: 95px;
+  object-fit: contain;
+}
+
+.carousel-control--previous { left: -4px; }
+.carousel-control--previous img { transform: scaleX(-1); }
+.carousel-control--next { right: 0; }
+
+.site-links {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2.6vw, 38px);
+  padding: 121px 3.4% 132px;
+  background: #d0d9e3;
+}
+
+.site-link {
+  display: block;
+  min-width: 0;
+  color: inherit;
+  text-align: center;
+  text-decoration: none;
+}
+
+.site-link span {
+  display: grid;
+  min-height: 96px;
+  place-items: center;
+  background: #000;
+  color: #fff;
+  font-size: clamp(24px, 3.82vw, 55px);
+  font-weight: 400;
+  line-height: 1.05;
+}
+
+.site-link img {
+  width: 100%;
+  height: 212px;
+  object-fit: cover;
+}
+
+.site-link:focus-visible,
+.carousel-control:focus-visible {
+  outline: 3px solid #165d9c;
+  outline-offset: 4px;
+}
+
+@media (max-width: 760px) {
+  .hero {
+    min-height: 400px;
+    height: 75vh;
+    max-height: 700px;
+  }
+
+  .hero__mark {
+    width: min(68vw, 420px);
+  }
+
+  .categories { padding-bottom: 58px; }
+
+  .category-grid {
+    grid-auto-columns: min(76vw, 475px);
+    gap: 12px;
+  }
+
+  .category-card h2 {
+    min-height: 100px;
+    font-size: clamp(28px, 7vw, 42px);
+  }
+
+  .category-card img { height: min(75vw, 360px); }
+
+  .carousel-control {
+    top: 61%;
+    width: 68px;
+    height: 72px;
+    padding: 6px;
+  }
+
+  .carousel-control img {
+    width: 56px;
+    height: 56px;
+  }
+
+  .site-links {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 28px 16px;
+    padding: 52px 5% 60px;
+  }
+
+  .site-link span {
+    min-height: 65px;
+    font-size: clamp(22px, 6vw, 34px);
+  }
+
+  .site-link img { height: auto; aspect-ratio: 1.46; }
+}
+
+@media (max-width: 420px) {
+  .hero { min-height: 360px; }
+  .site-links { grid-template-columns: 1fr; }
+}
